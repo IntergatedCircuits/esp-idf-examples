@@ -1,0 +1,43 @@
+{
+    "folders": [
+        {
+            "path": "hello-world"
+        },
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.h": "c",
+            "*.c": "c",
+            "*.hpp": "cpp",
+            "*.cpp": "cpp"
+        },
+        "C_Cpp.autoAddFileAssociations": false,
+        "[cpp]": {
+            "editor.defaultFormatter": "ms-vscode.cpptools",
+            "editor.formatOnSave": true
+        },
+        "cmake.configureOnOpen": false,
+        "cmake.enableAutomaticKitScan": false,
+        "cmake.options.advanced": {
+            "build": {
+                "statusBarVisibility": "hidden"
+            },
+            "launch": {
+                "statusBarVisibility": "hidden"
+            },
+            "debug": {
+                "statusBarVisibility": "hidden"
+            }
+        },
+        "idf.showOnboardingOnInit": false
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.cpptools",
+            "espressif.esp-idf-extension"
+        ]
+    }
+}

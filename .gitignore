@@ -1,0 +1,8 @@
+build/
+.vscode/
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
+sdkconfig

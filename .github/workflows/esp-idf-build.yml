@@ -1,0 +1,42 @@
+name: ESP-IDF Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install python dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: West workspace setup
+        run: |
+          west init -l .
+          west update
+
+      - name: Set up Docker (required by esp-idf-ci-action)
+        uses: docker/setup-buildx-action@v2
+
+      - name: esp-idf build
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.5.1
+          target: esp32
+          path: 'hello-world'
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: esp-idf-build
+          path: hello-world/build/hello-world.elf

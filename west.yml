@@ -1,0 +1,20 @@
+manifest:
+  defaults:
+    remote: origin
+  self:
+    path: esp-idf-examples
+
+  remotes:
+    # "origin" is used as a workaround for https://github.com/zephyrproject-rtos/west/issues/545
+    # to get submodules with relative paths checked out
+    - name: origin
+      url-base: https://github.com/espressif
+    - name: intel
+      url-base: https://github.com/intel
+
+  projects:
+    - name: cib
+      repo-path: compile-time-init-build
+      remote: intel
+      path: esp-idf-examples/cib
+      revision: 805114351a0f283d59476eae7ed1ac477bfab96f
